@@ -1,0 +1,148 @@
+{
+  "source\\bases_donnees\\entite_association": {
+    "spectateur_id": {
+      "data": {
+        "text/plain": "3"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "spectateur_id"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "id": {
+      "data": {
+        "text/plain": "5"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "id"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "film_id": {
+      "data": {
+        "text/plain": "16"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "film_id"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "ville": {
+      "data": {
+        "text/plain": "'Toulon'"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "ville"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "titre_notes": {
+      "data": {
+        "text/plain": "'Twin Peaks : Fire Walk with Me'"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "titre_notes"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "realisateur_id": {
+      "data": {
+        "text/plain": "2"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "realisateur_id"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "note": {
+      "data": {
+        "text/plain": "1"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "note"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "spectateur_notes": {
+      "data": {
+        "text/plain": "'Roger Martin'"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "spectateur_notes"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "nom_spectateur": {
+      "data": {
+        "text/plain": "'G\u00e9rard Bouchard'"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "nom_spectateur"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "date_naissance": {
+      "data": {
+        "text/plain": "1992"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "date_naissance"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "nom": {
+      "data": {
+        "text/plain": "'Jean Eustache'"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "nom"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "titre": {
+      "data": {
+        "text/plain": "'Mes petites amoureuses'"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "titre"
+        }
+      },
+      "output_type": "display_data"
+    }
+  }
+}

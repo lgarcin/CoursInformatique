@@ -1,0 +1,13 @@
+livereload
+jupyter-book
+matplotlib
+numpy
+sphinxcontrib-mermaid
+sphinxcontrib-tikz
+sphinx-exercise
+sphinx-proof
+ipython-sql
+schemadisplay-magic
+networkx
+sympy
+scipy

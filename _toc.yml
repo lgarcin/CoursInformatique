@@ -1,0 +1,30 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: source/intro
+parts:
+  - caption: Recherche
+    chapters:
+    - file: source/recherche
+    - file: source/bases_donnees/intro
+      sections:
+      - file: source/bases_donnees/tables
+      - file: source/bases_donnees/requetes
+      - file: source/bases_donnees/operateurs_ensemblistes
+      - file: source/bases_donnees/entite_association
+  - caption: Graphes
+    chapters:
+    - file: source/graphes/intro
+      sections:
+      - file: source/graphes/graphe
+      - file: source/graphes/graphe_oriente
+      - file: source/graphes/implementation
+      - file: source/graphes/parcours
+  - caption: Langage Python  
+    chapters:
+    - file: source/types/intro
+      sections:
+      - file: source/types/listes
+      - file: source/types/dictionnaires
+      - file: source/types/mutabilite

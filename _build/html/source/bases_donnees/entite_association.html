@@ -1,0 +1,1605 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Modèle entité-association &#8212; Informatique pour tous en CPGE</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="Graphes" href="../graphes/intro.html" />
+    <link rel="prev" title="Opérateurs ensemblistes" href="operateurs_ensemblistes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Informatique pour tous en CPGE</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Cours d’informatique pour tous en CPGE
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recherche
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../recherche.html">
+   Algorithmes de recherche
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Bases de données
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="tables.html">
+     Tables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="requetes.html">
+     Requêtes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operateurs_ensemblistes.html">
+     Opérateurs ensemblistes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Modèle entité-association
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Graphes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../graphes/intro.html">
+   Graphes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graphes/graphe.html">
+     Graphe non orienté
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graphes/graphe_oriente.html">
+     Graphe orienté
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graphes/implementation.html">
+     Implémentation d’un graphe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graphes/parcours.html">
+     Parcours d’un graphe et applications
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Langage Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../types/intro.html">
+   Types
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/listes.html">
+     Listes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/dictionnaires.html">
+     Dictionnaires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../types/mutabilite.html">
+     Mutabilité
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/source/bases_donnees/entite_association.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/source/bases_donnees/entite_association.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../_sources/source/bases_donnees/entite_association.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entites-et-associations">
+   Entités et associations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cles-primaires-et-etrangeres">
+   Clés primaires et étrangères
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cardinalite-d-une-association">
+   Cardinalité d’une association
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#associations-1">
+     Associations
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       1-*
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#associations-1-1">
+     Associations
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       1-1
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#associations">
+     Associations
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *-*
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jointures">
+   Jointures
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Modèle entité-association</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entites-et-associations">
+   Entités et associations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cles-primaires-et-etrangeres">
+   Clés primaires et étrangères
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cardinalite-d-une-association">
+   Cardinalité d’une association
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#associations-1">
+     Associations
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       1-*
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#associations-1-1">
+     Associations
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       1-1
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#associations">
+     Associations
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *-*
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jointures">
+   Jointures
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="modele-entite-association">
+<h1>Modèle entité-association<a class="headerlink" href="#modele-entite-association" title="Lien permanent vers ce titre">#</a></h1>
+<div class="cell tag_remove-stdout tag_remove-input docutils container">
+</div>
+<section id="entites-et-associations">
+<h2>Entités et associations<a class="headerlink" href="#entites-et-associations" title="Lien permanent vers ce titre">#</a></h2>
+<p>On cherche à modéliser les différents liens qui existent entre les tables d’une base de données. Une <strong>entité</strong> désigne une table de ces bases de données et une <strong>association</strong> désigne un lien entre deux entités. Par exemple, on manipulera une base de données dont les <strong>entités</strong> sont <code class="docutils literal notranslate"><span class="pre">REALISATEUR</span></code>, <code class="docutils literal notranslate"><span class="pre">FILM</span></code>, <code class="docutils literal notranslate"><span class="pre">SPECTATEUR</span></code> et <code class="docutils literal notranslate"><span class="pre">SPECTATEUR_DETAILS</span></code>.</p>
+<div class="mermaid">
+            erDiagram
+  REALISATEUR ||--|{ FILM : &quot;réalise&quot;
+  SPECTATEUR }o--o{ FILM : &quot;note&quot;
+  SPECTATEUR_RENSEIGNEMENTS ||--|| SPECTATEUR : &quot;renseigne&quot;
+        </div><p>Les associations entre ces entités sont les suivantes :</p>
+<ul class="simple">
+<li><p>Les réalisateurs <strong>réalisent</strong> des films.</p></li>
+<li><p>Les spectateurs <strong>notent</strong> des films.</p></li>
+<li><p>Les fiches de renseignements <strong>renseignent</strong> sur les spectateurs.</p></li>
+</ul>
+</section>
+<section id="cles-primaires-et-etrangeres">
+<h2>Clés primaires et étrangères<a class="headerlink" href="#cles-primaires-et-etrangeres" title="Lien permanent vers ce titre">#</a></h2>
+<p>Pour réaliser concrètement des associations entre entités d’une base de données, on utilise la notion de <strong>clé</strong>.</p>
+<p>Une <strong>clé primaire</strong> est un attribut ou la combinaison de plusieurs attributs d’une table d’une base de données permettant d’identifier chaque enregistrement de la table de manière unique. Considérons par exemple la table <code class="docutils literal notranslate"><span class="pre">films</span></code> suivante.</p>
+<div class="mermaid">
+            erDiagram
+  films {
+    string  titre
+    int     annee
+    int     duree
+  }
+        </div><p>Une clé primaire pourrait être l’attribut <code class="docutils literal notranslate"><span class="pre">titre</span></code> ou encore le couple <code class="docutils literal notranslate"><span class="pre">(titre,</span> <span class="pre">annee)</span></code>. Malheureusement, deux films pourraient avoir le même titre ou, encore pire, le même titre et la même année de sortie, ce qui ne permettrait pas d’identifier chaque enregistrement de manière unique. C’est pourquoi l’on rajoute souvent à une table un attribut <strong>identifiant</strong>. Cet identifiant (le plus souvent un entier ou éventuellement une chaîne de caractères) est généré de manière automatique à chaque ajout d’un enregistrement dans la table de telle sorte qu’il soit distinct des identifiants des enregistrements précédents.</p>
+<p>Dans la table suivante, l’attribut <code class="docutils literal notranslate"><span class="pre">id</span></code> désigne un identifiant qui servira de clé primaire (<code class="docutils literal notranslate"><span class="pre">PK</span></code> signifie <strong>P</strong>rimary <strong>K</strong>ey).</p>
+<div class="mermaid">
+            erDiagram
+  films {
+    int     id    PK
+    string  titre
+    int     annee
+    int     duree
+  }
+        </div><p>De la même manière, on considère la table <code class="docutils literal notranslate"><span class="pre">realisateurs</span></code> suivante où l’attribut <code class="docutils literal notranslate"><span class="pre">id</span></code> désigne à nouveau un identifiant servant de clé primaire.</p>
+<div class="mermaid">
+            erDiagram
+  realisateurs {
+    int     id    PK
+    string  nom
+    string  pays
+  }
+        </div><p>On peut relier ces deux entités <code class="docutils literal notranslate"><span class="pre">films</span></code> et <code class="docutils literal notranslate"><span class="pre">realisateurs</span></code> par une association à l’aide de ces clés. On utilise pour cela une <strong>clé étrangère</strong>, c’est-à-dire un attribut d’une table faisant référence à une clé primaire d’une autre table.</p>
+<p>Par exemple, l’attribut <code class="docutils literal notranslate"><span class="pre">realisateur_id</span></code> de la table <code class="docutils literal notranslate"><span class="pre">films</span></code> suivante est une clé étrangère (<code class="docutils literal notranslate"><span class="pre">FK</span></code> signifie <strong>F</strong>oreign <strong>K</strong>ey) faisant référence à l’attribut <code class="docutils literal notranslate"><span class="pre">id</span></code> de la table <code class="docutils literal notranslate"><span class="pre">realisateurs</span></code>.</p>
+<div class="mermaid">
+            erDiagram
+  films {
+    int     id              PK
+    string  titre
+    int     annee
+    int     duree
+    int     realisateur_id  FK
+  }
+        </div></section>
+<section id="cardinalite-d-une-association">
+<h2>Cardinalité d’une association<a class="headerlink" href="#cardinalite-d-une-association" title="Lien permanent vers ce titre">#</a></h2>
+<p>Dans l’exemple donné initialement, on remarque que les associations sont de plusieurs types :</p>
+<ul class="simple">
+<li><p>Un réalisateur peut réaliser plusieurs films tandis qu’un film est réalisé par un unique réalisateur : l’association <strong>réalise</strong> <code class="docutils literal notranslate"><span class="pre">REALISATEUR-&gt;FILM</span></code> est dite de type <code class="docutils literal notranslate"><span class="pre">1-*</span></code>.</p></li>
+<li><p>Un spectateur peut noter plusieurs films et un film peut être noté par plusieurs spectateurs : l’association <strong>note</strong> <code class="docutils literal notranslate"><span class="pre">SPECTATEUR-&gt;FILM</span></code> est dite de type <code class="docutils literal notranslate"><span class="pre">*-*</span></code>.</p></li>
+<li><p>Chaque fiche de renseignement est associé à un unique spectateur et chaque spectateur possède une unique fiche de renseignements : la relation <strong>renseigne</strong> <code class="docutils literal notranslate"><span class="pre">SPECTATEUR_RENSEIGNEMENTS-&gt;SPECTATEUR</span></code> est dite de type <code class="docutils literal notranslate"><span class="pre">1-1</span></code>.</p></li>
+</ul>
+<p>De manière générale :</p>
+<ul class="simple">
+<li><p>Une association entre une entité <code class="docutils literal notranslate"><span class="pre">A</span></code> et une entité <code class="docutils literal notranslate"><span class="pre">B</span></code> est dite de type <code class="docutils literal notranslate"><span class="pre">1-*</span></code> si tout élément de <code class="docutils literal notranslate"><span class="pre">A</span></code> est en relation avec plusieurs éléments de <code class="docutils literal notranslate"><span class="pre">B</span></code> et que chaque élément de <code class="docutils literal notranslate"><span class="pre">B</span></code> est en relation avec un unique élément de <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
+<li><p>Une association entre une entité <code class="docutils literal notranslate"><span class="pre">A</span></code> et une entité <code class="docutils literal notranslate"><span class="pre">B</span></code> est dite de type <code class="docutils literal notranslate"><span class="pre">1-1</span></code> si tout élément de <code class="docutils literal notranslate"><span class="pre">A</span></code> est en relation un unique élement de <code class="docutils literal notranslate"><span class="pre">B</span></code> et inversement.</p></li>
+<li><p>Une association entre une entité <code class="docutils literal notranslate"><span class="pre">A</span></code> et une entité <code class="docutils literal notranslate"><span class="pre">B</span></code> est dite de type <code class="docutils literal notranslate"><span class="pre">*-*</span></code> si tout élément de <code class="docutils literal notranslate"><span class="pre">A</span></code> est en relation avec plusieurs éléments de <code class="docutils literal notranslate"><span class="pre">B</span></code> et inversement.</p></li>
+</ul>
+<section id="associations-1">
+<h3>Associations <code class="docutils literal notranslate"><span class="pre">1-*</span></code><a class="headerlink" href="#associations-1" title="Lien permanent vers ce titre">#</a></h3>
+<p>L’utilistation d’une clé étrangère permet naturellement de réaliser des associations de type <code class="docutils literal notranslate"><span class="pre">1-*</span></code> comme le montre l’exemple suivant.</p>
+<div class="mermaid">
+            erDiagram
+  realisateurs ||--|{ films : &quot;réalise&quot;
+
+  films {
+    int     id              PK
+    string  titre
+    int     annee
+    int     duree
+    int     realisateur_id  FK
+  }
+
+  realisateurs {
+    int     id    PK
+    string  nom
+    string  pays
+  }
+        </div><div class="cell tag_remove-output tag_remove-input docutils container">
+</div>
+<p>Examinons par exemple l’enregistrement de la table <code class="docutils literal notranslate"><span class="pre">films</span></code> dont l’identifiant est <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">5</span></code></span>.</p>
+<div class="cell tag_remove-stdout tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>titre</th>
+        <th>annee</th>
+        <th>duree</th>
+        <th>realisateur_id</th>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Mes petites amoureuses</td>
+        <td>1974</td>
+        <td>123</td>
+        <td>2</td>
+    </tr>
+</table></div></div>
+</div>
+<p>Le film <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Mes</span> <span class="pre">petites</span> <span class="pre">amoureuses'</span></code></span> a donc été réalisé par le réalisateur dont l’identifiant est <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">2</span></code></span>.</p>
+<div class="cell tag_remove-stdout tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>nom</th>
+        <th>pays</th>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Jean Eustache</td>
+        <td>France</td>
+    </tr>
+</table></div></div>
+</div>
+<p>Autrement dit, <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Mes</span> <span class="pre">petites</span> <span class="pre">amoureuses'</span></code></span> a été réalisé par <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Jean</span> <span class="pre">Eustache'</span></code></span>.</p>
+</section>
+<section id="associations-1-1">
+<h3>Associations <code class="docutils literal notranslate"><span class="pre">1-1</span></code><a class="headerlink" href="#associations-1-1" title="Lien permanent vers ce titre">#</a></h3>
+<p>Pour réaliser une relation <code class="docutils literal notranslate"><span class="pre">1-1</span></code> entre deux tables, il suffit de définir une clé étrangère sur l’une des tables qui est également une clé primaire.</p>
+<p>Considérons les deux tables suivantes.</p>
+<div class="mermaid">
+            erDiagram
+  spectateurs_renseignements ||--|| spectateurs : &quot;renseigne&quot;
+
+  spectateurs {
+    int     id              PK
+    string  nom
+  }
+
+  spectateurs_renseignements {
+    int     spectateur_id    PK &quot;FK&quot;
+    string  ville
+    int     date_naissance
+  }
+        </div><p>La clé <code class="docutils literal notranslate"><span class="pre">spectateur_id</span></code> de la table <code class="docutils literal notranslate"><span class="pre">spectateurs_renseignements</span></code> est à la fois une clé étrangère est une clé primaire. De cette façon, chaque enregistrement de la table <code class="docutils literal notranslate"><span class="pre">spectateurs_renseignements</span></code> est associé de manière unique à un enregistrement de la table <code class="docutils literal notranslate"><span class="pre">spectateurs</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Il ne s’agit pas rigoureusement d’une association <code class="docutils literal notranslate"><span class="pre">1-1</span></code> car un enregistrement de la table <code class="docutils literal notranslate"><span class="pre">spectateurs</span></code> est en fait associé à <strong>au plus un</strong> enregistrement de la table <code class="docutils literal notranslate"><span class="pre">spectateurs_renseignements</span></code>.</p>
+</div>
+<p>Observons le contenu de ces deux tables.</p>
+<div class="cell tag_remove-stdout docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT * FROM spectateurs
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>nom</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Alain Dupont</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Annie Durand</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Roger Martin</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Valérie Petit</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Jean Dubois</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Mireille Deschamps</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Gérard Bouchard</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell tag_remove-stdout docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT * FROM spectateurs_renseignements
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>spectateur_id</th>
+        <th>ville</th>
+        <th>date_naissance</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Melun</td>
+        <td>1972</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Troyes</td>
+        <td>1985</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Avignon</td>
+        <td>2005</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Brest</td>
+        <td>1972</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Avignon</td>
+        <td>1993</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Paris</td>
+        <td>1985</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Toulon</td>
+        <td>1992</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell tag_remove-output tag_remove-input docutils container">
+</div>
+<p>Par exemple, <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Gérard</span> <span class="pre">Bouchard'</span></code></span> habite à <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Toulon'</span></code></span> et est né en <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">1992</span></code></span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deux entités qui sont en relation <code class="docutils literal notranslate"><span class="pre">1-1</span></code> peuvent toujours être fusionnées.</p>
+</div>
+<p>Par exemple, les tables <code class="docutils literal notranslate"><span class="pre">spectateurs</span></code> et <code class="docutils literal notranslate"><span class="pre">spectateurs_renseignements</span></code> pourraient être fusionnées en l’unique table <code class="docutils literal notranslate"><span class="pre">spectateurs</span></code> suivante.</p>
+<div class="mermaid">
+            erDiagram
+  spectateurs {
+    int     id              PK
+    string  nom
+    string  ville
+    int     date_naissance
+  }
+        </div></section>
+<section id="associations">
+<h3>Associations <code class="docutils literal notranslate"><span class="pre">*-*</span></code><a class="headerlink" href="#associations" title="Lien permanent vers ce titre">#</a></h3>
+<p>On ne peut pas réaliser des associations <code class="docutils literal notranslate"><span class="pre">*-*</span></code> comme on l’a fait précédemment pour les associations <code class="docutils literal notranslate"><span class="pre">1-*</span></code> et <code class="docutils literal notranslate"><span class="pre">1-1</span></code> puisqu’une clé étrangère ne peut faire référence qu’à un seul enregistrement d’une table. L’idée est alors de séparer une assosiaton <code class="docutils literal notranslate"><span class="pre">*-*</span></code> en deux assocations <code class="docutils literal notranslate"><span class="pre">1-*</span></code> à l’aide d’une entité intermédiaire.</p>
+<p>Dans notre exemple, on peut modéliser l’association <code class="docutils literal notranslate"><span class="pre">note</span></code> entre les entités <code class="docutils literal notranslate"><span class="pre">FILM</span></code> et <code class="docutils literal notranslate"><span class="pre">SPECTATEUR</span></code> à l’aide d’une entité intermédiaire que l’on appelera encore <code class="docutils literal notranslate"><span class="pre">NOTE</span></code>.</p>
+<div class="mermaid">
+            erDiagram
+  FILM ||--|{ NOTE : &quot;est noté&quot;
+  SPECTATEUR ||--|{ NOTE : &quot;attribue&quot;
+        </div><p>Chaque film peut être associé à plusieurs notes de même que chaque spectateur peut être associé à plusieurs notes.</p>
+<p>Plus précisément, voici le schéma relationnel entre les tables <code class="docutils literal notranslate"><span class="pre">films</span></code>, <code class="docutils literal notranslate"><span class="pre">spectateurs</span></code> et <code class="docutils literal notranslate"><span class="pre">notes</span></code>.</p>
+<div class="mermaid">
+            erDiagram
+  films ||--|{ notes : &quot;est noté&quot;
+  spectateurs ||--|{ notes : &quot;attribue&quot;
+
+  films {
+    int     id              PK
+    string  titre
+    int     annee
+    int     duree
+    int     realisateur_id  FK
+  }
+
+  spectateurs {
+    int     id              PK
+    string  nom
+  }
+
+  notes {
+    int film_id       FK
+    int spectateur_id FK
+    int note
+  }
+        </div><div class="cell tag_remove-output tag_remove-input docutils container">
+</div>
+<p>Examinons un enregistrement particulier de la table <code class="docutils literal notranslate"><span class="pre">notes</span></code>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>film_id</th>
+        <th>spectateur_id</th>
+        <th>note</th>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>3</td>
+        <td>1</td>
+    </tr>
+</table></div></div>
+</div>
+<p>Ceci signifie que la note <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">1</span></code></span> a été attribuée au film dont l’identifiant est <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">16</span></code></span> par le spectateur dont l’identifiant est <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3</span></code></span>.</p>
+<div class="cell tag_remove-output tag_remove-input docutils container">
+</div>
+<p>Regardons les enregistrements correspondants des tables <code class="docutils literal notranslate"><span class="pre">films</span></code> et <code class="docutils literal notranslate"><span class="pre">spectateurs</span></code>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>titre</th>
+        <th>annee</th>
+        <th>duree</th>
+        <th>realisateur_id</th>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Twin Peaks : Fire Walk with Me</td>
+        <td>1992</td>
+        <td>135</td>
+        <td>7</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>nom</th>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Roger Martin</td>
+    </tr>
+</table></div></div>
+</div>
+<p>Ceci signifie que le spectateur <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Roger</span> <span class="pre">Martin'</span></code></span> a attribué la note <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">1</span></code></span> au film <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Twin</span> <span class="pre">Peaks</span> <span class="pre">:</span> <span class="pre">Fire</span> <span class="pre">Walk</span> <span class="pre">with</span> <span class="pre">Me'</span></code></span>.</p>
+</section>
+</section>
+<section id="jointures">
+<h2>Jointures<a class="headerlink" href="#jointures" title="Lien permanent vers ce titre">#</a></h2>
+<p>Les <strong>jointures</strong> permettent de retrouver de l’information sur deux ou plusieurs tables associées.</p>
+<div class="cell tag_remove-stdout tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT * FROM films JOIN realisateurs ON films.realisateur_id = realisateurs.id
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>id</th>
+        <th>titre</th>
+        <th>annee</th>
+        <th>duree</th>
+        <th>realisateur_id</th>
+        <th>id_1</th>
+        <th>nom</th>
+        <th>pays</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Beau travail</td>
+        <td>1999</td>
+        <td>92</td>
+        <td>1</td>
+        <td>1</td>
+        <td>Claire Denis</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>L&#x27;intrus</td>
+        <td>2004</td>
+        <td>130</td>
+        <td>1</td>
+        <td>1</td>
+        <td>Claire Denis</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Trouble every day</td>
+        <td>2001</td>
+        <td>105</td>
+        <td>1</td>
+        <td>1</td>
+        <td>Claire Denis</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>La maman et la putain</td>
+        <td>1973</td>
+        <td>217</td>
+        <td>2</td>
+        <td>2</td>
+        <td>Jean Eustache</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Mes petites amoureuses</td>
+        <td>1974</td>
+        <td>123</td>
+        <td>2</td>
+        <td>2</td>
+        <td>Jean Eustache</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Les idiots</td>
+        <td>1998</td>
+        <td>117</td>
+        <td>3</td>
+        <td>3</td>
+        <td>Lars von Trier</td>
+        <td>Danemark</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Element of crime</td>
+        <td>1984</td>
+        <td>104</td>
+        <td>3</td>
+        <td>3</td>
+        <td>Lars von Trier</td>
+        <td>Danemark</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Un temps pour vivre, un temps pour mourir</td>
+        <td>1985</td>
+        <td>138</td>
+        <td>4</td>
+        <td>4</td>
+        <td>Hou Hsiao-Hsien</td>
+        <td>Taïwan</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Millenium mambo</td>
+        <td>2001</td>
+        <td>119</td>
+        <td>4</td>
+        <td>4</td>
+        <td>Hou Hsiao-Hsien</td>
+        <td>Taïwan</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Goodbye south, goodbye</td>
+        <td>1997</td>
+        <td>124</td>
+        <td>4</td>
+        <td>4</td>
+        <td>Hou Hsiao-Hsien</td>
+        <td>Taïwan</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Contes cruels de la jeunesse</td>
+        <td>1960</td>
+        <td>96</td>
+        <td>5</td>
+        <td>5</td>
+        <td>Nagisa Oshima</td>
+        <td>Japon</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Le jour de l&#x27;éclipse</td>
+        <td>1992</td>
+        <td>139</td>
+        <td>6</td>
+        <td>6</td>
+        <td>Alexandre Sokourov</td>
+        <td>Russie</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Père, fils</td>
+        <td>2003</td>
+        <td>97</td>
+        <td>6</td>
+        <td>6</td>
+        <td>Alexandre Sokourov</td>
+        <td>Russie</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>Blue Velvet</td>
+        <td>1986</td>
+        <td>120</td>
+        <td>7</td>
+        <td>7</td>
+        <td>David Lynch</td>
+        <td>Etats-Unis</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Sailor et Lula</td>
+        <td>1990</td>
+        <td>124</td>
+        <td>7</td>
+        <td>7</td>
+        <td>David Lynch</td>
+        <td>Etats-Unis</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Twin Peaks : Fire Walk with Me</td>
+        <td>1992</td>
+        <td>135</td>
+        <td>7</td>
+        <td>7</td>
+        <td>David Lynch</td>
+        <td>Etats-Unis</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>Lost Highway</td>
+        <td>1997</td>
+        <td>135</td>
+        <td>7</td>
+        <td>7</td>
+        <td>David Lynch</td>
+        <td>Etats-Unis</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>Mulholland Drive</td>
+        <td>2001</td>
+        <td>146</td>
+        <td>7</td>
+        <td>7</td>
+        <td>David Lynch</td>
+        <td>Etats-Unis</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Voyage au bout de l&#x27;enfer</td>
+        <td>1978</td>
+        <td>182</td>
+        <td>8</td>
+        <td>8</td>
+        <td>Michael Cimino</td>
+        <td>Etats-Unis</td>
+    </tr>
+</table></div></div>
+</div>
+<p>La requête précédente est en fait équivalente à la requête suivante.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">films</span><span class="p">,</span><span class="w"> </span><span class="n">realisateurs</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">films</span><span class="p">.</span><span class="n">realisateur_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">realisateurs</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Néanmoins la première requête est plus rapide que la seconde.</p>
+<div class="cell tag_remove-stdout tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT titre, nom, note FROM films JOIN notes JOIN spectateurs
+ON films.id = notes.film_id AND spectateurs.id = notes.spectateur_id
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>titre</th>
+        <th>nom</th>
+        <th>note</th>
+    </tr>
+    <tr>
+        <td>Beau travail</td>
+        <td>Alain Dupont</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Beau travail</td>
+        <td>Annie Durand</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>L&#x27;intrus</td>
+        <td>Alain Dupont</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>L&#x27;intrus</td>
+        <td>Valérie Petit</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>L&#x27;intrus</td>
+        <td>Mireille Deschamps</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>L&#x27;intrus</td>
+        <td>Gérard Bouchard</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Trouble every day</td>
+        <td>Alain Dupont</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Trouble every day</td>
+        <td>Roger Martin</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Trouble every day</td>
+        <td>Jean Dubois</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>La maman et la putain</td>
+        <td>Valérie Petit</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Mes petites amoureuses</td>
+        <td>Alain Dupont</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Mes petites amoureuses</td>
+        <td>Annie Durand</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Mes petites amoureuses</td>
+        <td>Valérie Petit</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Mes petites amoureuses</td>
+        <td>Mireille Deschamps</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Mes petites amoureuses</td>
+        <td>Gérard Bouchard</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Les idiots</td>
+        <td>Alain Dupont</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Les idiots</td>
+        <td>Roger Martin</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Element of crime</td>
+        <td>Alain Dupont</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Element of crime</td>
+        <td>Annie Durand</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Element of crime</td>
+        <td>Roger Martin</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Element of crime</td>
+        <td>Valérie Petit</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Un temps pour vivre, un temps pour mourir</td>
+        <td>Alain Dupont</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Un temps pour vivre, un temps pour mourir</td>
+        <td>Roger Martin</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Un temps pour vivre, un temps pour mourir</td>
+        <td>Valérie Petit</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Un temps pour vivre, un temps pour mourir</td>
+        <td>Jean Dubois</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Un temps pour vivre, un temps pour mourir</td>
+        <td>Mireille Deschamps</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Un temps pour vivre, un temps pour mourir</td>
+        <td>Gérard Bouchard</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Millenium mambo</td>
+        <td>Annie Durand</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Millenium mambo</td>
+        <td>Mireille Deschamps</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Millenium mambo</td>
+        <td>Gérard Bouchard</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Goodbye south, goodbye</td>
+        <td>Alain Dupont</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Goodbye south, goodbye</td>
+        <td>Annie Durand</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Goodbye south, goodbye</td>
+        <td>Roger Martin</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Goodbye south, goodbye</td>
+        <td>Valérie Petit</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Goodbye south, goodbye</td>
+        <td>Gérard Bouchard</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Contes cruels de la jeunesse</td>
+        <td>Alain Dupont</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Contes cruels de la jeunesse</td>
+        <td>Annie Durand</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Contes cruels de la jeunesse</td>
+        <td>Roger Martin</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Contes cruels de la jeunesse</td>
+        <td>Valérie Petit</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Contes cruels de la jeunesse</td>
+        <td>Mireille Deschamps</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Le jour de l&#x27;éclipse</td>
+        <td>Alain Dupont</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Le jour de l&#x27;éclipse</td>
+        <td>Roger Martin</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Le jour de l&#x27;éclipse</td>
+        <td>Valérie Petit</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Le jour de l&#x27;éclipse</td>
+        <td>Jean Dubois</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Le jour de l&#x27;éclipse</td>
+        <td>Mireille Deschamps</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Père, fils</td>
+        <td>Annie Durand</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Père, fils</td>
+        <td>Jean Dubois</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Père, fils</td>
+        <td>Mireille Deschamps</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Blue Velvet</td>
+        <td>Alain Dupont</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Blue Velvet</td>
+        <td>Annie Durand</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Blue Velvet</td>
+        <td>Mireille Deschamps</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Sailor et Lula</td>
+        <td>Alain Dupont</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Sailor et Lula</td>
+        <td>Annie Durand</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Sailor et Lula</td>
+        <td>Roger Martin</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Sailor et Lula</td>
+        <td>Mireille Deschamps</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Twin Peaks : Fire Walk with Me</td>
+        <td>Alain Dupont</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Twin Peaks : Fire Walk with Me</td>
+        <td>Roger Martin</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Twin Peaks : Fire Walk with Me</td>
+        <td>Jean Dubois</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Twin Peaks : Fire Walk with Me</td>
+        <td>Gérard Bouchard</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Lost Highway</td>
+        <td>Alain Dupont</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Lost Highway</td>
+        <td>Annie Durand</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Lost Highway</td>
+        <td>Roger Martin</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Lost Highway</td>
+        <td>Valérie Petit</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>Lost Highway</td>
+        <td>Mireille Deschamps</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Lost Highway</td>
+        <td>Gérard Bouchard</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Mulholland Drive</td>
+        <td>Mireille Deschamps</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Mulholland Drive</td>
+        <td>Gérard Bouchard</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Voyage au bout de l&#x27;enfer</td>
+        <td>Mireille Deschamps</td>
+        <td>9</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell tag_remove-stdout tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT nom, date_naissance, ville FROM spectateurs JOIN spectateurs_renseignements
+ON spectateurs.id = spectateurs_renseignements.spectateur_id
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <th>nom</th>
+        <th>date_naissance</th>
+        <th>ville</th>
+    </tr>
+    <tr>
+        <td>Alain Dupont</td>
+        <td>1972</td>
+        <td>Melun</td>
+    </tr>
+    <tr>
+        <td>Annie Durand</td>
+        <td>1985</td>
+        <td>Troyes</td>
+    </tr>
+    <tr>
+        <td>Roger Martin</td>
+        <td>2005</td>
+        <td>Avignon</td>
+    </tr>
+    <tr>
+        <td>Valérie Petit</td>
+        <td>1972</td>
+        <td>Brest</td>
+    </tr>
+    <tr>
+        <td>Jean Dubois</td>
+        <td>1993</td>
+        <td>Avignon</td>
+    </tr>
+    <tr>
+        <td>Mireille Deschamps</td>
+        <td>1985</td>
+        <td>Paris</td>
+    </tr>
+    <tr>
+        <td>Gérard Bouchard</td>
+        <td>1992</td>
+        <td>Toulon</td>
+    </tr>
+</table></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./source\bases_donnees"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="operateurs_ensemblistes.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title">Opérateurs ensemblistes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../graphes/intro.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Graphes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Laurent Garcin<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

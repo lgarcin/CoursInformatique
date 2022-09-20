@@ -39,7 +39,7 @@ class Graphe:
                     pile.append(voisin)
 
     def parcours_largeur(self, sommet_initial):
-        visites = {sommet : False for sommet in self.G.keys()}
+        visites = {sommet: False for sommet in self.G.keys()}
         file = collections.deque()
         file.append(sommet_initial)
         while file:
@@ -56,12 +56,12 @@ class Graphe:
 
     def get_parcours_profondeur_animation(self, sommet_initial):
         ani = FuncAnimation(
-            self.fig, self.animate, frames=lambda: self.parcours_profondeur(sommet_initial), save_count=len(self.G))
+            self.fig, self.animate, frames=lambda: self.parcours_profondeur(sommet_initial), save_count=len(self.G), interval=1000)
         plt.close()
         return ani
 
     def get_parcours_largeur_animation(self, sommet_initial):
         ani = FuncAnimation(
-            self.fig, self.animate, frames=lambda: self.parcours_largeur(sommet_initial), save_count=len(self.G))
+            self.fig, self.animate, frames=lambda: self.parcours_largeur(sommet_initial), save_count=len(self.G), interval=1000)
         plt.close()
         return ani

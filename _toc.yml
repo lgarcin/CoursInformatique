@@ -7,6 +7,8 @@ parts:
   - caption: Premier semestre
     chapters:
     - file: source/recherche
+    - file: source/dichotomie
+    - file: source/recursivite
   - caption: Second semestre
     chapters:
     - file: source/graphes/intro

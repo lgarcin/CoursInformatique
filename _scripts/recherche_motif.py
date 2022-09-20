@@ -6,7 +6,7 @@ from matplotlib import rc
 rc('animation', html='jshtml')
 
 
-class Recherche:
+class RechercheMotif:
 
     def __init__(self, motif, chaine):
         self.chaine = chaine
@@ -17,6 +17,7 @@ class Recherche:
         plt.axis('off')
         plt.axis('equal')
         plt.axis([0, len(chaine) * self.width, 0, 3*self.width])
+        plt.title('Recherche de '+motif+' dans '+chaine, fontsize=20)
 
         self.rectangles_chaine = [plt.gca().add_patch(plt.Rectangle(
             [i * self.width, 0], 9, 9, color='b')) for i in range(len(chaine))]

@@ -398,4 +398,4 @@ connexite_profondeur(G, 1), connexite_largeur(G, 1)
 
 <!-- Faire la même chose pour les graphes orientés -->
 
-<!-- Peut-être renvoyer la liste des visités pour parcours en largeur -->
+<!-- Peut-être renvoyer la liste des visités pour parcours -->

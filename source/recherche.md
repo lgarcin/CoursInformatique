@@ -185,7 +185,7 @@ recherche_motif("pipa", "pitapipapa")
 
 ```{code-cell}
 :tags: ["remove-input"]
-Recherche("pipa", "patapipapa").get_animation()
+RechercheMotif("pipa", "patapipapa").get_animation()
 ```
 
 ```{code-cell}
@@ -194,7 +194,7 @@ recherche_motif("tapa", "patapipapa")
 
 ```{code-cell}
 :tags: ["remove-input"]
-Recherche("tapa", "patapipapa").get_animation()
+RechercheMotif("tapa", "patapipapa").get_animation()
 ```
 
 ## Recherche des deux valeurs les plus proches d'un tableau

@@ -23,6 +23,7 @@ edges=[(1,2), (3,1), (2,3), (1,4), (2,4), (3,3), (5,3)]
 ```
 
 ```{prf:definition} Graphe
+:label: def_graphe
 Un **graphe** est la donnée de **sommets** (ou **noeuds**) et d\\'**arêtes** reliant ces sommets.
 ```
 
@@ -50,12 +51,14 @@ Latex(",\;".join([str(e[0])+"-"+str(e[1]) for e in G.edges]))
 ```
 
 ```{prf:definition} Boucle
+:label: def_boucle
 C'est une arête reliant un sommet à lui-même.
 ```
 
 Dans l'exemple précédent $3-3$ est une boucle.
 
 ```{prf:definition} Définition formelle d'un graphe non orienté
+:label: def_graphe_formel
 On appelle graphe tout couple $G=(S,A)$ où $S$ est un ensemble et
 
 $$
@@ -87,6 +90,7 @@ Un graphe est dit **complet** si deux sommets quelconques distincts sont reliés
 ```
 
 ```{prf:definition} Degré d'un sommet
+:label: def_degre
 Le degré d'un sommet $s$ est le nombre $d(s)$ d'arêtes dont une extrémité est $s$.
 ```
 
@@ -102,6 +106,7 @@ Latex(",\;".join(["d("+str(s)+")="+str(d) for (s,d) in G.degree()]))
 ```
 
 ```{prf:definition} Chemin
+:label: def_chemin
 On appelle **chemin** d'un sommet $s_1$ à un sommet $s_2$ une suite finie d'arêtes consécutives reliant les sommets $s_1$ et $s_2$.
 ```
 
@@ -117,12 +122,14 @@ Montrer que la relation binaire : "il existe un chemin reliant le sommet $s_1$ a
 ```
 
 ```{prf:definition} Cycle
+:label: def_cycle
 Un **cycle** est un chemin dont le sommet initial et le sommet terminal sont identiques.
 ```
 
 Dans l'exemple précédent, $1-2-4-1$ est un cycle.
 
 ```{prf:definition} Connexité
+:label: def_connexite
 Un graphe est dit **connexe** si pour tout couple $(s_1,s_2)$ de sommets, il existe un chemin menant de $s_1$ à $s_2$.
 ```
 

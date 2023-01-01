@@ -38,6 +38,7 @@ nx.draw_circular(G, with_labels=True, font_weight="bold", font_size=20, node_siz
 ```
 
 ```{prf:definition} Sommets adjacents
+:label: def_sommets_adjacents
 On dit que deux sommets d'un graphe sont **adjacents** s'ils sont reliés par une arête.
 ```
 

@@ -23,6 +23,7 @@ edges=[(1,2), (3,1), (2,3), (1,4), (2,4), (3,3), (5,3)]
 ```
 
 ```{prf:definition} Graphe *orienté*
+:label: def_graphe_oriente
 Un graphe **orienté** est un graphe dont les arêtes sont orientées. On parle alors d\\'**arc** plutôt que d'arête. Chaque arc possède donc un sommet initial (ou origine) et un sommet terminal (ou extrémité).
 ```
 
@@ -48,6 +49,7 @@ Latex(",\;".join([str(e[0])+r"\to "+str(e[1]) for e in G.edges]))
 ```
 
 ```{prf:definition} Définition formelle d'un graphe orienté
+:label: def_graphe_oriente_formel
 On appelle graphe orienté tout couple $G=(S,A)$ où $S$ est un ensemble et
 
 $$
@@ -72,10 +74,12 @@ Latex("A=\left\{"+",\;".join(["("+str(e[0])+","+str(e[1])+")" for e in G.edges])
 ```
 
 ```{prf:definition} Degré entrant d'un sommet
+:label: def_degre_entrant
 Le **degré entrant** d'un sommet $s$ est le nombre $d_-(s)$ d'arcs dont le sommet terminal est $s$.
 ```
 
 ```{prf:definition} Degré sortant d'un sommet
+:label: def_degre_sortant
 Le **degré sortant** d'un sommet $s$  le nombre $d_+(s)$ d'arcs dont le sommet initial est $s$.
 ```
 
@@ -92,6 +96,7 @@ Latex(",\;".join(["d_+("+str(s)+")="+str(d) for (s,d) in G.out_degree()]))
 ```
 
 ```{prf:definition} Chemin
+:label: def_chemin_oriente
 On appelle **chemin** d'un sommet $s_1$ à un sommet $s_2$ une suite finie d'arcs consécutifs reliant les sommets $s_1$ et $s_2$.
 ```
 
@@ -102,6 +107,7 @@ L'orientation des arcs compte.
 Dans l'exemple précédent, $1\to2\to4$ et $5\to3\to1$ sont des chemins.
 
 ```{prf:definition} Cycle
+:label: def_cycle_oriente
 Un **cycle** est un chemin dont le sommet initial et le sommet terminal sont identiques.
 ```
 

@@ -269,6 +269,8 @@ parcours_largeur(G, 1)
 
 ### Détection de cycles
 
+Le parcours d'un graphe en profondeur ou en largeur permet de détecter la présence de {prf:ref}`cycles <def_cycle>`.
+
 ```{code-cell}
 import collections
 
@@ -309,7 +311,6 @@ def contient_cycle_largeur(G, sommet_initial):
 
 ```{code-cell}
 G = {1: [2, 3, 4], 2: [1, 3, 4], 3: [1, 2, 3, 5], 4: [1, 2], 5: [3]}
-#G = {1: [2], 2: [1]}
 ```
 
 ```{code-cell}
@@ -335,6 +336,8 @@ contient_cycle_profondeur(G, 1), contient_cycle_largeur(G, 1)
 ```
 
 ### Connexité
+
+Le parcours d'un graphe en profondeur ou en largeur permet de déterminer la {prf:ref}`connexité<def_connexite>`.
 
 ```{code-cell}
 import collections
@@ -396,6 +399,6 @@ nx.draw_spring(nx.Graph(G), with_labels=True, font_weight="bold", font_size=20, 
 connexite_profondeur(G, 1), connexite_largeur(G, 1)
 ```
 
-<!-- Faire la même chose pour les graphes orientés -->
+<!-- TODO Faire la même chose pour les graphes orientés -->
 
-<!-- Peut-être renvoyer la liste des visités pour parcours -->
+<!-- TODO Peut-être renvoyer la liste des visités pour parcours -->

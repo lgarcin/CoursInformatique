@@ -9,6 +9,7 @@ parts:
     - file: source/recherche
     - file: source/dichotomie
     - file: source/recursivite
+    - file: source/images
   - caption: Second semestre
     chapters:
     - file: source/graphes/intro

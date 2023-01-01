@@ -17,6 +17,8 @@ kernelspec:
 
 <!-- TODO Expliquer le principe général -->
 
+<!-- TODO Expliquer le principe de la pile de récursion -->
+
 ## Algorithmes dichotomiques
 
 ### Recherche dans un tableau trié

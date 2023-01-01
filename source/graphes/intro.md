@@ -15,4 +15,4 @@ kernelspec:
 
 # Graphes
 
-<!-- baratin introductif -->
+<!-- TODO baratin introductif -->

@@ -11,3 +11,4 @@ schemadisplay-magic
 networkx
 sympy
 scipy
+imageio

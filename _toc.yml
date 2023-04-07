@@ -18,6 +18,7 @@ parts:
       - file: source/graphes/graphe_oriente
       - file: source/graphes/implementation
       - file: source/graphes/parcours
+      - file: source/graphes/plus_court_chemin
   - caption: Troisième semestre
     chapters:
     - file: source/bases_donnees/intro

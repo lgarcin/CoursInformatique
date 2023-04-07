@@ -19,7 +19,7 @@ kernelspec:
 :tags: ["remove-input"]
 import networkx as nx
 from IPython.display import Latex
-edges=[(1,2), (3,1), (2,3), (1,4), (2,4), (3,3), (5,3)]
+edges = [(1,2), (3,1), (2,3), (1,4), (2,4), (3,3), (5,3)]
 ```
 
 ```{prf:definition} Graphe
@@ -138,7 +138,7 @@ Un graphe $G$ est connexe si la relation d'équivalence définie dans {ref}`rel-
 ```
 
 ```{exercise}
-:label: connexe
+:label: exo_connexe
 1. Quel est le nombre minimal d'arêtes d'un graphe connexe à $n$ sommets ?
 2. Montrer qu'un graphe sans boucle à $n$ sommets et strictement plus de $\frac{(n-1)(n-2)}{2}$ arêtes est nécessairement connexe.
 ```

@@ -200,7 +200,7 @@ G = {1: [2, 3, 4], 2: [1, 3, 4], 3: [1, 2, 3, 5], 4: [1, 2], 5: [3]}
 
 ```{code-cell}
 :tags: ["remove-input"]
-Graphe(G).get_parcours_profondeur_animation(1)
+Graphe(nx.Graph(G)).get_parcours_profondeur_animation(1)
 ```
 
 ```{code-cell}
@@ -213,7 +213,7 @@ G = {1: [2, 3], 2: [4, 5], 3: [6, 7], 4: [], 5: [], 6: [], 7:[]}
 
 ```{code-cell}
 :tags: ["remove-input"]
-Graphe(G).get_parcours_profondeur_animation(1)
+Graphe(nx.Graph(G)).get_parcours_profondeur_animation(1)
 ```
 
 ```{code-cell}
@@ -245,7 +245,7 @@ G = {1: [2, 3, 4], 2: [1, 3, 4], 3: [1, 2, 3, 5], 4: [1, 2], 5: [3]}
 
 ```{code-cell}
 :tags: ["remove-input"]
-Graphe(G).get_parcours_largeur_animation(1)
+Graphe(nx.Graph(G)).get_parcours_largeur_animation(1)
 ```
 
 ```{code-cell}
@@ -258,7 +258,7 @@ G = {1: [2, 3], 2: [4, 5], 3: [6, 7], 4: [], 5: [], 6: [], 7:[]}
 
 ```{code-cell}
 :tags: ["remove-input"]
-Graphe(G).get_parcours_largeur_animation(1)
+Graphe(nx.Graph(G)).get_parcours_largeur_animation(1)
 ```
 
 ```{code-cell}

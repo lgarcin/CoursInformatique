@@ -277,4 +277,6 @@ graphe_dictionnaire
 dijkstra_chemins(graphe_dictionnaire, 'A')
 ```
 
+## Utilisation d'une file de priorité
+
 <!-- TODO Topo sur les files de priorité -->

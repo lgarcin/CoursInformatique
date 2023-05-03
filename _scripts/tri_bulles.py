@@ -87,6 +87,6 @@ class TriBulles:
     def get_animation(self):
         N = len(self.tab)
         ani = FuncAnimation(self.fig, self.animate, frames=self.tri,
-                            save_count=N*(N-1)/2*self.width*5)
+                            save_count=N*(N-1)//2*self.width*5)
         close()
         return ani

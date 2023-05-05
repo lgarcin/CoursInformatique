@@ -29,6 +29,8 @@ warnings.filterwarnings("ignore")
 
 ```{prf:definition} Graphe étiqueté
 Un graphe (orienté ou non) est dit **étiqueté** si l'on a affecté un attribut (nombre, chaîne de caractère, ...) à chacune de ses arêtes ou chacun de ses arcs.
+
+De manière plus formelle, un graphe étiqueté est un triplet $(S,A,f)$ où $(S,A)$ est un graphe et $f$ une application de $A$ dans un ensemble $E$.
 ```
 
 Par exemple, un tel graphe pourrait servir à décrire le type de lien existant entre les différents membres d'un réseau social.
@@ -68,6 +70,9 @@ plt.show()
 
 ```{prf:definition} Graphe pondéré
 Un graphe **pondéré** est un graphe étiqueté par des réels positifs. On parle alors du **poids** d'une arête.
+
+De manière plus formelle, un graphe étiqueté est un triplet $(S,A,f)$ où $(S,A)$ est un graphe et $f$ une application de $A$ dans un ensemble $\mathbb{R}_+$.
+
 ```
 
 On peut par exemple utiliser un graphe pondéré pour modéliser des distances entre des sommets.
@@ -176,11 +181,11 @@ def dijkstra(dod, deb):
             if dist[s] < min_dist:
                 min_dist_sommet = s
                 min_dist = dist[s]
-        sommets_non_traites.remove(min_dist_sommet)
         voisins = dod[min_dist_sommet]
         for s in voisins:
             if s in sommets_non_traites:
                 dist[s] = min(dist[s], min_dist+voisins[s])
+        sommets_non_traites.remove(min_dist_sommet)
     return dist
 ```
 
@@ -206,7 +211,6 @@ def dijkstra_predecesseurs(dod, deb):
             if dist < min_dist:
                 min_dist_sommet = s
                 min_dist = dist
-        sommets_non_traites.remove(min_dist_sommet)
         voisins = dod[min_dist_sommet]
         for s in voisins:
             if s in sommets_non_traites:
@@ -214,6 +218,7 @@ def dijkstra_predecesseurs(dod, deb):
                 dist, _ = predecesseurs[s]
                 if d < dist:
                     predecesseurs[s] = (d, min_dist_sommet)
+        sommets_non_traites.remove(min_dist_sommet)
     return predecesseurs
 ```
 
@@ -235,7 +240,6 @@ def dijkstra_chemins(dod, deb):
             if dist < min_dist:
                 min_dist_sommet = s
                 min_dist = dist
-        sommets_non_traites.remove(min_dist_sommet)
         voisins = dod[min_dist_sommet]
         for s in voisins:
             if s in sommets_non_traites:
@@ -244,6 +248,7 @@ def dijkstra_chemins(dod, deb):
                 if d < dist:
                     _, chemin = chemins[min_dist_sommet]
                     chemins[s] = (d, chemin + [min_dist_sommet])
+        sommets_non_traites.remove(min_dist_sommet)
     return chemins
 ```
 
@@ -276,7 +281,3 @@ graphe_dictionnaire
 ```{code-cell}
 dijkstra_chemins(graphe_dictionnaire, 'A')
 ```
-
-## Utilisation d'une file de priorité
-
-<!-- TODO Topo sur les files de priorité -->

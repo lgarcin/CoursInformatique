@@ -71,7 +71,7 @@ plt.show()
 ```{prf:definition} Graphe pondéré
 Un graphe **pondéré** est un graphe étiqueté par des réels positifs. On parle alors du **poids** d'une arête.
 
-De manière plus formelle, un graphe étiqueté est un triplet $(S,A,f)$ où $(S,A)$ est un graphe et $f$ une application de $A$ dans un ensemble $\mathbb{R}_+$.
+De manière plus formelle, un graphe étiqueté est un triplet $(S,A,p)$ où $(S,A)$ est un graphe et $p$ une application de $A$ dans un ensemble $\mathbb{R}_+$.
 
 ```
 
@@ -153,14 +153,14 @@ Matrix(nx.to_numpy_array(G, dtype=float, nonedge=np.inf))
 
 L'objectif de l'algorithme de Dijkstra est de déterminer un **chemin de poids minimal** entre deux sommets d'un graphe pondéré, le poids d'un chemin étant égal à la somme des poids des arêtes qui le composent. Bien souvent, le poids d'une arête représente une distance entre deux sommets : on parle alors de **plus court chemin**.
 
-Plus précisément, en fixant un sommet de départ $s_0$, l'algorithme de Dijkstra calcule les distances minimales $\mathrm{distance}[s]$ du sommet de départ $s_0$ à chacun des sommets $s$ du graphe.
+Plus précisément, en fixant un sommet de départ $s_0$ d'un graphe pondéré $(S,A,p)$, l'algorithme de Dijkstra calcule les distances minimales $d[s]$ du sommet de départ $s_0$ à chacun des sommets $s$ du graphe.
 
 * Initialisation :
-  * On initialise les distances : $\mathrm{distance}[s]=\infty$ pour tout $s\in S$, $\mathrm{distance}[s_0]=0$
+  * On initialise les distances : $d[s]=\infty$ pour tout $s\in S\setminus\{s_0\}$, $d[s_0]=0$
   * On initialise la liste des sommets à traiter : $L\gets S$
 * Tant que $L\neq\emptyset$
-  * Trouver le sommet $s_m$ de $L$ telle que $\mathrm{distance}[s_m]$ est minimale
-  * Pour chaque voisin $v$ de $s_m$ dans $L$, $\mathrm{distance}[v]=\min(\mathrm{distance}[v],d[s_m]+\mathrm{poids}(s_m,v))$
+  * Trouver le sommet $s_m$ de $L$ telle que $d[s_m]$ est minimale
+  * Pour chaque voisin $v$ de $s_m$ dans $L$, $d[v]=\min(d[v],d[s_m]+p(s_m,v))$
   * Retirer $s_m$ de $L$
 
 ```{code-cell}
@@ -281,3 +281,5 @@ graphe_dictionnaire
 ```{code-cell}
 dijkstra_chemins(graphe_dictionnaire, 'A')
 ```
+
+<!-- TODO Comparer avec l'algorithme A* -->

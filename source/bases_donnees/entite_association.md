@@ -323,35 +323,3 @@ spectateur
 ```
 
 Ceci signifie que le spectateur {glue:}`spectateur_notes` a attribué la note {glue:}`note` au film {glue:}`titre_notes`.
-
-## Jointures
-
-Les **jointures** permettent de retrouver de l'information sur deux ou plusieurs tables associées.
-
-```{code-cell}
-:tags: ["remove-stdout", "output_scroll"]
-%%sql
-SELECT * FROM films JOIN realisateurs ON films.realisateur_id = realisateurs.id
-```
-
-La requête précédente est en fait équivalente à la requête suivante.
-
-```sql
-SELECT * FROM films, realisateurs WHERE films.realisateur_id = realisateurs.id
-```
-
-Néanmoins la première requête est plus rapide que la seconde.
-
-```{code-cell}
-:tags: ["remove-stdout", "output_scroll"]
-%%sql
-SELECT titre, nom, note FROM films JOIN notes JOIN spectateurs
-ON films.id = notes.film_id AND spectateurs.id = notes.spectateur_id
-```
-
-```{code-cell}
-:tags: ["remove-stdout", "output_scroll"]
-%%sql
-SELECT nom, date_naissance, ville FROM spectateurs JOIN spectateurs_renseignements
-ON spectateurs.id = spectateurs_renseignements.spectateur_id
-```

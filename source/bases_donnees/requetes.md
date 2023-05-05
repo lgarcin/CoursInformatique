@@ -15,16 +15,49 @@ kernelspec:
 
 # Requêtes
 
-Pour retrouver des informations dans une base de données, on effectue ce qu'on appelle des **reqûetes** décrites dans un langage approprié. Le langage que nous utiliserons est le langage **SQL** (Structured Query Language). Une requête permet de renvoyer une nouvelle table à partir de tables stockées dans la base de données.
+Pour retrouver des informations dans une base de données, on effectue ce qu'on appelle des **requêtes** décrites dans un langage approprié. Le langage que nous utiliserons est le langage **SQL** (Structured Query Language). Une requête permet de renvoyer une nouvelle table à partir de tables stockées dans la base de données.
 
 ```{code-cell}
+:tags: ["remove-stdout", "remove-input"]
 %load_ext sql
 %sql sqlite:///../../_databases/dummy.db
+```
+
+## Projection
+
+Pour sélectionner les colonnes d'une table, on utilise la requête `SELECT`. La syntaxe générale est la suivante :
+
+```sql
+SELECT _colonnes_ FROM _table_
+```
+
+```{code-cell}
+:tags: ["remove-stdout", "output_scroll"]
+%%sql
+SELECT titre FROM films
+```
+
+On peut sélectionner plusieurs colonnes d'une table.
+
+```{code-cell}
+:tags: ["remove-stdout", "output_scroll"]
+%%sql
+SELECT titre, duree FROM films
+```
+
+```{note}
+L'astérique `*` que l'on a utilisé jusqu'à maintenant permet de sélectionner toutes les colonnes d'une table.
 ```
 
 ## Sélection
 
 Pour sélectionner les enregistrements d'une table dont les attributs vérifient une certaine condition on utilise la requête `SELECT` assortie d'une clause `WHERE`.
+
+La syntaxe générale est la suivante :
+
+```sql
+SELECT _colonnes_ FROM _table_ WHERE _condition_
+```
 
 ```{code-cell}
 :tags: ["remove-stdout"]
@@ -46,28 +79,6 @@ La condition peut porter sur plusieurs colonnes.
 :tags: ["remove-stdout", "output_scroll"]
 %%sql
 SELECT * FROM films WHERE annee > 1980 OR duree <= 120
-```
-
-## Projection
-
-La requête `SELECT` permet également de sélectionner non les lignes mais les colonnes d'une table.
-
-```{code-cell}
-:tags: ["remove-stdout", "output_scroll"]
-%%sql
-SELECT titre FROM films
-```
-
-```{note}
-L'astérique `*` que l'on a utilisé jusqu'à maintenant permet de sélectionner toutes les colonnes d'une table.
-```
-
-On peut sélectionner plusieurs colonnes d'une table.
-
-```{code-cell}
-:tags: ["remove-stdout", "output_scroll"]
-%%sql
-SELECT titre, duree FROM films
 ```
 
 On peut également combiner les requêtes de sélection et de projection (sélection de lignes **et** de colonnes).

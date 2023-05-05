@@ -27,6 +27,8 @@ parts:
       - file: source/bases_donnees/requetes
       - file: source/bases_donnees/operateurs_ensemblistes
       - file: source/bases_donnees/entite_association
+      - file: source/bases_donnees/jointures
+      - file: source/bases_donnees/agregation
     - file: source/ia/intro
       sections:
       - file: source/ia/voisins

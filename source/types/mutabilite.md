@@ -231,9 +231,9 @@ id(liste1), id(liste2)  # c'est normal : liste1 et liste2 pointent vers le même
 
 ## Egalité structurelle ou physique
 
-On a vu que l'opérateur `==` permettait de tester si deux objets étaient égaux. Mais de quel type d'égalité parle-t-on alors ? L'opérateur `==` teste si deux objets ont la même **valeur** sans pour autant qu'il partage le même emplacement en mémoire. On parle alors d'**égalité structurelle**.
+On a vu que l'opérateur `==` permettait de tester si deux objets étaient égaux. Mais de quel type d'égalité parle-t-on alors ? L'opérateur `==` teste si deux objets ont la même **valeur** sans pour autant qu'il partage le même emplacement en mémoire. On parle alors d\\'**égalité structurelle**.
 
-Lorsque "deux" objets sont en fait identiques (c'est-à-dire lorsqu'ils ont le même emplacement en mémoire), on parle d'**égalité physique**. Pour tester l'égalité physique, on peut comparer les emplacements en mémoire à l'aide de la fonction `id` ou plus simplement utiliser l'opérateur `is`.
+Lorsque "deux" objets sont en fait identiques (c'est-à-dire lorsqu'ils ont le même emplacement en mémoire), on parle d\\'**égalité physique**. Pour tester l'égalité physique, on peut comparer les emplacements en mémoire à l'aide de la fonction `id` ou plus simplement utiliser l'opérateur `is`.
 
 ```{code-cell}
 dict1 = {'nom': 'toto', 'age': 43}

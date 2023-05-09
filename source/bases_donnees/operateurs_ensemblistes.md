@@ -65,7 +65,7 @@ SELECT * FROM t2
 
 ___
 
-L'opérateur `INTERSECT` permet de créer l'**intersection** de deux tables, c'est-à-dire la table dont les lignes figurent dans les deux tables à la fois.
+L'opérateur `INTERSECT` permet de créer l\\'**intersection** de deux tables, c'est-à-dire la table dont les lignes figurent dans les deux tables à la fois.
 
 ```{code-cell}
 :tags: ["remove-stdout"]

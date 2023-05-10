@@ -48,7 +48,7 @@ jobs:
         run: |
           pip install -U -r requirements.txt
           sudo apt-get update -y
-          sudo apt-get install -y poppler-utils 
+          sudo apt-get install -y poppler-utils netpbm
     
       # Build the book
       - name: Build the book

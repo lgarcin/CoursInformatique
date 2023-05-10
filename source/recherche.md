@@ -78,6 +78,7 @@ La méthode `index` de la classe `list` permet de déterminer l'indice d'une val
 ```
 
 ```{code-cell}
+:tags: ["raises-exception"]
 [5, 4, 1, 2, 3].index(6)
 ```
 

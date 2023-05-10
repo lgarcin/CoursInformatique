@@ -20,8 +20,9 @@ Une image est représentée par un tableau à deux dimensions. Chaque case de ce
 ```{code-cell}
 import imageio.v3 as io
 import matplotlib.pyplot as plt
+import numpy as np
 
-img = io.imread('imageio:camera.png')
+img = np.array(io.imread('imageio:camera.png'))
 plt.imshow(img, cmap='gray')
 ```
 

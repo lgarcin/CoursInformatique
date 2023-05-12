@@ -89,6 +89,7 @@ ma_liste[-1], ma_liste[-3]
 L'accès à une position non valide déclenche une erreur.
 
 ```{code-cell}
+:tags: ["raises-exception"]
 ma_liste[10]
 ```
 

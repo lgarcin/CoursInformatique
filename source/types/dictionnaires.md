@@ -71,6 +71,7 @@ d.keys(), d.values()
 L'accès à une clé invalide déclenche une erreur.
 
 ```{code-cell}
+:tags: ["raises-exception"]
 d['amstramgram'], d.get(42)
 ```
 

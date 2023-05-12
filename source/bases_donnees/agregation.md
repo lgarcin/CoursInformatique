@@ -123,7 +123,7 @@ SELECT COUNT(DISTINCT pays) FROM realisateurs
 
 ## Agrégation sur des regroupements
 
-On peut effectuer des agrégations par groupement d'attributs à l'aide d'une clause `GROUP BY`.
+Par défaut, une fonction d'agrégation est appliquée à toutes les lignes d'une table. On peut effectuer des agrégations sur des groupements de lignes à l'aide d'une clause `GROUP BY`. Plus précisément, cette  clause permet d'appliquer une fonction d'agrégation sur les groupes de lignes possédant la même valeur pour un attribut donné. Ces groupements de lignes portent le nom d'agrégats.
 
 La requête suivante permet par exemple de compter le nombre de réalisateurs pour chaque pays d'origine.
 
@@ -146,6 +146,10 @@ GROUP BY spectateurs.nom, pays
 
 ## Filtrage des agrégats
 
+La clause `HAVING` permet de filtrer une requête à l'aide d'une condition portant sur le résultat d'une fonction d'agrégation.
+
+Par exemple, la requête suivante liste tous les réalisateurs dont la durée moyenne des films est strictement supérieure à 120 minutes.
+
 ```{code-cell}
 :tags: ["remove-stdout", "output_scroll"]
 %%sql
@@ -155,4 +159,16 @@ GROUP BY nom
 HAVING duree_moyenne>120
 ```
 
-<!-- TODO Expliquer la différence entre HAVING et WHERE -->
+La clause `HAVING` semble similaire à la clause `WHERE` mais elle en diffère en ce que la clause `WHERE` filtre les lignes individuelles d'une table tandis que la clause `HAVING` filtre des agrégats ou groupements de lignes.
+
+On peut bien entendu effectuer des requêtes comportant à la fois une clause `WHERE` et une clause `HAVING`.
+
+```{code-cell}
+:tags: ["remove-stdout", "output_scroll"]
+%%sql
+SELECT nom, AVG(duree) AS duree_moyenne
+FROM realisateurs JOIN films ON films.realisateur_id=realisateurs.id
+WHERE annee<2000
+GROUP BY nom
+HAVING duree_moyenne>120
+```

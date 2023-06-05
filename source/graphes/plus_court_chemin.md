@@ -282,4 +282,6 @@ graphe_dictionnaire
 dijkstra_chemins(graphe_dictionnaire, 'A')
 ```
 
+<!-- TODO Reprendre avec files de priorité -->
+
 <!-- TODO Comparer avec l'algorithme A* -->

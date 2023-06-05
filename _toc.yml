@@ -10,6 +10,7 @@ parts:
     - file: source/dichotomie
     - file: source/recursivite
     - file: source/images
+    - file: source/tris
   - caption: Second semestre
     chapters:
     - file: source/graphes/intro

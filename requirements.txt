@@ -12,3 +12,4 @@ networkx
 sympy
 scipy
 imageio
+bokeh

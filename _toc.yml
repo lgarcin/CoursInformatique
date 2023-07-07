@@ -9,6 +9,7 @@ parts:
     - file: source/recherche
     - file: source/dichotomie
     - file: source/recursivite
+    - file: source/gloutons
     - file: source/images
     - file: source/tris
   - caption: Second semestre

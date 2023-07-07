@@ -116,7 +116,7 @@ SELECT * FROM t1, t2
 
 Les lignes de la table résultante sont formées des lignes de la première table appariées à chacune des lignes de la seconde table.
 
-On peut sélectionner uniquement certaines colonnes de chacune des deux tables comme le montre l'example suivant.
+On peut sélectionner uniquement certaines colonnes de chacune des deux tables comme le montre l'exemple suivant.
 
 ```{code-cell}
 :tags: ["remove-stdout"]

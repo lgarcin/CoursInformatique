@@ -34,6 +34,7 @@ parts:
     - file: source/ia/intro
       sections:
       - file: source/ia/voisins
+      - file: source/ia/moyennes
   - caption: Langage Python  
     chapters:
     - file: source/types/intro

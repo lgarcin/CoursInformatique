@@ -38,14 +38,14 @@ La liste des sommets de ce graphe est :
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex(",\;".join([str(n) for n in G.nodes]))
+Latex(r",\;".join([str(n) for n in G.nodes]))
 ```
 
 et la liste des arcs est :
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex(",\;".join([str(e[0])+r"\to "+str(e[1]) for e in G.edges]))
+Latex(r",\;".join([str(e[0])+r"\to "+str(e[1]) for e in G.edges]))
 ```
 
 ```{prf:definition} Définition formelle d'un graphe orienté
@@ -65,12 +65,12 @@ Les couples de la forme $(x,x)$ désignent des boucles.
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex("S=\left\{"+",\;".join([str(n) for n in G.nodes])+r"\right\}")
+Latex(r"S=\left\{"+r",\;".join([str(n) for n in G.nodes])+r"\right\}")
 ```
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex("A=\left\{"+",\;".join(["("+str(e[0])+","+str(e[1])+")" for e in G.edges])+r"\right\}")
+Latex(r"A=\left\{"+r",\;".join(["("+str(e[0])+","+str(e[1])+")" for e in G.edges])+r"\right\}")
 ```
 
 ```{prf:definition} Degré entrant d'un sommet
@@ -87,12 +87,12 @@ Dans l'exemple précédent, les degrés entrants et sortants des différents som
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex(",\;".join(["d_-("+str(s)+")="+str(d) for (s,d) in G.in_degree()]))
+Latex(r",\;".join(["d_-("+str(s)+")="+str(d) for (s,d) in G.in_degree()]))
 ```
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex(",\;".join(["d_+("+str(s)+")="+str(d) for (s,d) in G.out_degree()]))
+Latex(r",\;".join(["d_+("+str(s)+")="+str(d) for (s,d) in G.out_degree()]))
 ```
 
 ```{prf:definition} Chemin

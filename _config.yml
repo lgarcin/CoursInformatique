@@ -38,6 +38,12 @@ sphinx:
     - sphinx_proof
   config:
     language: fr
+    mathjax3_config:
+      tex:
+        macros:
+          "dR": "\\mathbb{R}"
+          "lb": "\\left[\\!\\left["
+          "rb": "\\right]\\!\\right]"
 
 parse:
   myst_enable_extensions:

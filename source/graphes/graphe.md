@@ -40,14 +40,14 @@ La liste des sommets de ce graphe est :
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex(",\;".join([str(n) for n in G.nodes]))
+Latex(r",\;".join([str(n) for n in G.nodes]))
 ```
 
 et la liste des arêtes est :
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex(",\;".join([str(e[0])+"-"+str(e[1]) for e in G.edges]))
+Latex(r",\;".join([str(e[0])+"-"+str(e[1]) for e in G.edges]))
 ```
 
 ```{prf:definition} Boucle
@@ -76,12 +76,12 @@ Dans l'exemple précédent, on a donc :
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex("S=\left\{"+",\;".join([str(n) for n in G.nodes])+r"\right\}")
+Latex(r"S=\left\{"+r",\;".join([str(n) for n in G.nodes])+r"\right\}")
 ```
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex("A=\left\{"+",\;".join(["\{"+str(e[0])+","+str(e[1])+"\}" for e in G.edges])+r"\right\}")
+Latex(r"A=\left\{"+r",\;".join([r"\{"+str(e[0])+","+str(e[1])+r"\}" for e in G.edges])+r"\right\}")
 ```
 
 ```{exercise}
@@ -102,7 +102,7 @@ Dans l'exemple précédent, les degrés des différents sommets sont les suivant
 
 ```{code-cell}
 :tags: ["remove-input"]
-Latex(",\;".join(["d("+str(s)+")="+str(d) for (s,d) in G.degree()]))
+Latex(r",\;".join(["d("+str(s)+")="+str(d) for (s,d) in G.degree()]))
 ```
 
 ```{prf:definition} Chemin

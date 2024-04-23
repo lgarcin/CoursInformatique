@@ -27,7 +27,7 @@ L'algorithme des $k$-voisins est un algorithme d'apprentissage **supervisé**. E
 
 ## Modélisation du problème
 
-On représentera chaque entrée du jeu d'apprentissage par un vecteur de $\mathbb R^p$ et la distance utilisée pour déterminer les plus proches voisins sera la distance euclidienne.[^distance]
+On représentera chaque entrée du jeu d'apprentissage par un vecteur de $\dR^p$ et la distance utilisée pour déterminer les plus proches voisins sera la distance euclidienne.[^distance]
 
 [^distance]: On peut tout à fait décider de représenter les entrées d'une autre manière et utiliser une distance autre que la distance euclidienne.
 
@@ -48,7 +48,7 @@ glue("k", k)
 n = sorted(s1+s2+s3, key=lambda sample: alg.norm(sample[0]-input))[:k]
 ```
 
-Donnons-nous par exemple des données représentées par des éléments de $\mathbb{R}^2$. Ces données sont réparties en trois classes comme le montre le graphique suivant.
+Donnons-nous par exemple des données représentées par des éléments de $\dR^2$. Ces données sont réparties en trois classes comme le montre le graphique suivant.
 
 ```{code-cell}
 :tags: ["remove-input"]

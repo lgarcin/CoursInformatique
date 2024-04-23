@@ -3,9 +3,8 @@ jupyter-book
 matplotlib
 numpy
 sphinxcontrib-mermaid
-sphinxcontrib-tikz
+sphinxcontrib-tikz==0.4.17
 sphinx-exercise
-sphinx-proof
 ipython-sql
 schemadisplay-magic
 networkx
@@ -13,3 +12,4 @@ sympy
 scipy
 imageio
 bokeh
+git+https://github.com/executablebooks/sphinx-proof@master

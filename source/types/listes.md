@@ -241,7 +241,7 @@ $$
 Il peut également être décrit en _compréhension_ :
 
 $$
-\mathcal{A}=\{2n,\;n\in[\![0,9]\!]\}
+\mathcal{A}=\left\{2n,\;n\in\lb0,9\rb\right\}
 $$
 
 De la même manière, la liste de ces entiers peut être défini en Python en extension :
@@ -261,7 +261,7 @@ On parle alors de _liste en compréhension_.
 Une autre manière de définir $\mathcal{A}$ en compréhension est la suivante :
 
 $$
-\mathcal{A} = \{x\in[\![0,19]\!],\;x\equiv0[2]\}
+\mathcal{A} = \left\{x\in\lb0,19\rb,\;x\equiv0[2]\right\}
 $$
 
 La version correspondante en Python est :

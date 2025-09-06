@@ -5,8 +5,6 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
 kernelspec:
   display_name: Python 3
   language: python
@@ -80,7 +78,7 @@ Le **degré entrant** d'un sommet $s$ est le nombre $d_-(s)$ d'arcs dont le somm
 
 ```{prf:definition} Degré sortant d'un sommet
 :label: def_degre_sortant
-Le **degré sortant** d'un sommet $s$  le nombre $d_+(s)$ d'arcs dont le sommet initial est $s$.
+Le **degré sortant** d'un sommet $s$ est le nombre $d_+(s)$ d'arcs dont le sommet initial est $s$.
 ```
 
 Dans l'exemple précédent, les degrés entrants et sortants des différents sommets sont les suivants :
@@ -95,9 +93,9 @@ Latex(r",\;".join(["d_-("+str(s)+")="+str(d) for (s,d) in G.in_degree()]))
 Latex(r",\;".join(["d_+("+str(s)+")="+str(d) for (s,d) in G.out_degree()]))
 ```
 
-```{prf:definition} Chemin
+```{prf:definition} Chemin orienté
 :label: def_chemin_oriente
-On appelle **chemin** d'un sommet $s_1$ à un sommet $s_2$ une suite finie d'arcs consécutifs reliant les sommets $s_1$ et $s_2$.
+On appelle **chemin orienté** d'un sommet $s_1$ à un sommet $s_2$ une suite finie d'arcs consécutifs reliant les sommets $s_1$ et $s_2$.
 ```
 
 ```{warning}
@@ -106,9 +104,9 @@ L'orientation des arcs compte.
 
 Dans l'exemple précédent, $1\to2\to4$ et $5\to3\to1$ sont des chemins.
 
-```{prf:definition} Cycle
+```{prf:definition} Cycle orienté
 :label: def_cycle_oriente
-Un **cycle** est un chemin dont le sommet initial et le sommet terminal sont identiques.
+Un **cycle orienté** est un chemin orienté dont le sommet initial et le sommet terminal sont identiques.
 ```
 
 Dans l'exemple précédent, $3\to1\to2\to3$ est un cycle.

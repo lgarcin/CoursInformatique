@@ -5,8 +5,6 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
 kernelspec:
   display_name: Python 3
   language: python
@@ -108,7 +106,7 @@ Le graphe précédent est représenté par les listes d'adjacence suivantes.
 {s: [k for k in v] for (s, v) in G.adjacency()}
 ```
 
-Si les sommets sont numérotés de $1$ à $n$, on peut également représenter un graphe orienté par une matrice d'adjacence. Il s'agit d'une matrice de taille $n\times n$ dont le coefficient $(i,j)$ vaut $1$ s'il existe un arc ùenant de $i$ à $j$.
+Si les sommets sont numérotés de $1$ à $n$, on peut également représenter un graphe orienté par une matrice d'adjacence. Il s'agit d'une matrice de taille $n\times n$ dont le coefficient $(i,j)$ vaut $1$ s'il existe un arc menant de $i$ à $j$.
 
 Plus rigoureusement, pour un graphe orienté $G=(S,A)$ la matrice d'adjacence $M$ est définie par
 

@@ -5,8 +5,6 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
 kernelspec:
   display_name: Python 3
   language: python
@@ -48,6 +46,10 @@ On dispose de $n$ points à répartir en $k$ classes. Ces classes seront numéro
 ```
 
 On peut montrer que la fonction $\Phi$ décroît strictement à chaque itération. Comme le nombre de partitions est fini, on peut alors garantir que l'algorithme s'arrête. Malheureusment, rien ne garantit que la partition finale obtenue corresponde à un minimum global de $\Phi$.
+
+## Modélisation
+
+On représente les données par un tableau `numpy` `data` de taille $n\times d$ où $n$ est le nombre de données et $d$ la dimension de l'espace des données ($\dR^d$). L'attribution des classes se fait via un tableau `numpy` `classes` où `classes[i]` est le numéro de la classe attribuée à la donnée d'indice `i`, c'est-à-dire `data[i,:]`.
 
 ## Implémentation
 
@@ -97,10 +99,10 @@ import numpy.linalg as alg
 :tags: ["remove-input"]
 import matplotlib.pyplot as plt
 
-data1 = rd.normal([-4.0, 4.0], 1.0, (20, 2))
-data2 = rd.normal([4.0, -4.0], 1.0, (30, 2))
-data3 = rd.normal([-4.0, -4.0], 1.0, (40, 2))
-data4 = rd.normal([4.0, 4.0], 1.0, (10, 2))
+data1 = rd.normal([-5.0, 5.0], 1.0, (20, 2))
+data2 = rd.normal([5.0, -5.0], 1.0, (30, 2))
+data3 = rd.normal([-5.0, -5.0], 1.0, (40, 2))
+data4 = rd.normal([5.0, 5.0], 1.0, (25, 2))
 
 data = np.concatenate((data1, data2, data3, data4))
 

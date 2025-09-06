@@ -12,4 +12,3 @@ sympy
 scipy
 imageio
 bokeh
-git+https://github.com/executablebooks/sphinx-proof@master

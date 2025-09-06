@@ -35,7 +35,8 @@ parts:
       sections:
       - file: source/ia/voisins
       - file: source/ia/moyennes
-  - caption: Langage Python  
+      - file: source/ia/jeux
+  - caption: Langage Python
     chapters:
     - file: source/types/intro
       sections:
